@@ -1,0 +1,1372 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
+@import url(//db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal); 
+
+
+:root{
+    --main-color:#181818; 
+    --menu-color:#2b2b2b; 
+    --card-color:#474747; 
+    --white: #f6f6f6;  
+    --red: #660d0d; 
+    --main-color-glass: rgba(24, 24, 24, 0.8); 
+    --border: solid rgba(224, 224, 224, 0.2);
+    --blackk: #0b0b0c; 
+    --glass: linear-gradient(to right, var(--card-color), rbga(0,0,0,0));
+    --light-grey: #6f6f6f; 
+
+}
+
+*{
+    font-family: 'Neue Montreal', sans-serif; 
+    margin: 0; padding: 0; 
+    box-sizing: border-box; 
+    outline: none; border: none; 
+    text-decoration: none; 
+}
+
+*::selection{
+    background-color: var(--main-color);
+    color:#181818;
+}
+
+*::-webkit-scrollbar{
+    height: .5rem; 
+    width: 1rem; 
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent; 
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--main-color); 
+}
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+
+}
+
+body{
+    background-color: var(--blackk); 
+}
+
+body.active{
+    padding-left:0;
+}
+
+section{
+    padding:2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+
+
+
+.btn, 
+.option-btn, 
+.delete-btn, 
+.inline-btn, 
+.inline-option-btn, 
+.inline-delete-btn{
+    border-radius: .5rem; 
+    padding: 1rem 3rem; 
+    font-size: 2rem;  
+    color: var(--white); 
+    margin-top:1rem;
+    text-transform: capitalize;
+    font-weight: bolder;
+    cursor: pointer; 
+    text-align: center; 
+    margin-right:1rem; 
+}
+
+.btn,
+.option-btn, 
+.delete-btn{
+    display: block;
+    width:100%; 
+} 
+
+.inline-btn, 
+.inline-option-btn, 
+.inline-delete-btn{
+    display: inline-block;
+}
+
+.btn, 
+.inline-btn{
+    background-color: var(--menu-color);
+    color: var(var(--white));
+}
+
+.option-btn, 
+.inline-option-btn{
+    background-color: var(--card-color);
+}
+
+.delete-btn, 
+.inline-delete-btn{
+    background-color: #474747;
+}
+
+.landing-btn{
+    width: 50rem; 
+    display: inline-block;
+    text-align: center;
+    font-size: 3rem; 
+    background-color: rgba(0,0,0,0.5); 
+    color: var(--white);
+    padding: 1rem; 
+    margin: 1rem; 
+    border-radius: 1rem; 
+    margin: auto;  
+    animation-name: floats;
+    animation-duration: 3s;
+    animation-delay: -1s; 
+    position: relative; 
+    margin-bottom: 1rem; 
+    font-family: 'Monument Extended', sans-serif;
+
+}
+
+.row-btn {
+    display: block; 
+    width: 100%; 
+    text-align: center; 
+    padding: 1rem; 
+    font-size: 2rem; 
+    background-color: #181818;
+    margin-top: 2rem; 
+    color: white; 
+    border-radius: 1rem; 
+}
+
+.row-btn:hover{
+    background-color: white;
+    color:rgba(24, 24, 24, 0.8); 
+    transition: 0.25s ease-in-out; 
+}
+
+.heading{
+    padding-bottom: 1.8rem;
+    border-bottom:var(--border); 
+    font-size: 2.5rem;
+    color:var(--white); 
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    font-family: 'monument extended', sans-serif;
+}
+
+.header{
+    background-color: var(--main-color); 
+    border-bottom: var(--border); 
+    top: 0; left: 0; right: 0; 
+    z-index: 1000; 
+}
+
+.btn:hover, 
+.landing-btn:hover, 
+.option-btn:hover, 
+.delete-btn:hover, 
+.inline-btn:hover, 
+.inline-option-btn:hover, 
+.inline-delete-btn:hover{
+    background-color: var(--white);
+    color: var(--main-color);
+    transition: 0.25s ease-in-out; 
+}
+
+.flex-btn{
+    display:flex;
+    gap: 1rem; 
+}
+
+.header .flex{
+    padding: 1.5rem 2rem;
+    position: relative;  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header .flex .logo{
+    font-size: 3rem; 
+    color: var(--white);
+    font-weight: 100; 
+    font-family: "Monument Extended", sans-serif; 
+
+}
+
+.header .flex .search-form{
+    width: 50rem; 
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;  
+    gap: 1.5rem; 
+    padding: 1rem 2rem;
+    background-color: var(--menu-color);
+}
+
+.header .flex .search-form input{
+    width: 95%;
+    background: none ;
+    font-size: 1.8rem;
+    color: var(--white);
+
+}
+
+.header .flex .search-form button{
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer; 
+    background: none;
+}
+
+.header .flex .search-form button:hover{
+    color: var(--main-color);
+}
+
+.header .flex .icons div{
+    font-size: 2rem;
+    color: var(--white);
+    border-radius: 0.5rem;
+    height: 4.5rem; 
+    cursor: pointer;
+    width: 4.5rem; 
+    text-align: center; 
+    margin-left: 1rem; 
+    line-height: 4.4rem; 
+    background-color: var(--menu-color);
+}
+
+.header .flex .icons div:hover{
+    background-color: var(--white);
+    color:var(--main-color)
+}
+
+#search-btn{
+    display: none; 
+}
+
+
+
+.hook{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("Images/20230201_164212.jpg");
+    align-items: center; 
+    text-align: center; 
+    vertical-align: middle;
+    padding-top: 10rem; 
+}
+
+.cent {
+    font-size: 11.5rem;
+    color: white; 
+    text-align: center;
+    position: relative; 
+    animation-name: pop; 
+    animation-duration: 3s; 
+    animation-delay: -1.5s;
+    font-weight: 400;
+    font-family: 'Monument Extended', sans-serif; 
+    display: inline-flex; 
+}
+
+.hook img{
+    height: 30rem; 
+    position: relative; 
+    animation-name: logo; 
+    animation-duration: 3s; 
+    animation-delay: -1s; 
+    justify-content: center;
+    padding-bottom: 10rem; 
+}
+
+
+.about {
+    margin-left: 5%; 
+    margin-right: 5%; 
+    padding-top: 5rem; 
+    padding-bottom: 5rem; 
+    font-family: 'Monument Extended', sans-serif; 
+}
+
+.about .row .content h3{
+    font-size: 7rem;
+    word-spacing: 2px;
+    margin-bottom: 2rem; 
+    color: #000;  
+    font-family: 'Monument Extended', sans-serif;  
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+
+}
+
+.about .row .content ul{
+    justify-content: center; 
+    padding-left: 5rem; 
+    
+}
+
+.about .row .content ul li{
+    font-size: 2rem;
+    line-height: 150%;
+    color: #acacac;
+    padding-left: 1rem;
+    list-style: upper-roman;
+    padding-bottom: 0.5rem; 
+}
+ 
+.faq{
+    padding-top: 5rem; 
+
+    padding-left: 5%; 
+    padding-right: 5%; 
+
+}
+
+.faq h3{
+    font-size: 7rem;
+    word-spacing: 2px;
+    margin-bottom: 2rem; 
+    color: #000;  
+    font-family: 'Monument Extended', sans-serif;  
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+
+.faq .quest, .faq .ans{
+    font-size: 4rem;
+    color: white; 
+    font-weight: 500;
+    padding-right: 3rem;
+}
+
+.faq .ans{
+    text-align: right; 
+    color: #acacac; 
+    padding-bottom: 4rem; 
+}
+
+
+
+.scrollmenu {
+    background-color: var(--main-color); 
+    overflow: auto;  
+    white-space: nowrap; 
+    border-top: 5px;
+    border-bottom: 5px; 
+    border-style: double; 
+    border-color: #474747;
+    margin-top: 2rem; 
+}
+
+.scrollmenu .box2 {
+    display: inline-block; 
+    max-width: 40rem;
+    padding: 10px; 
+}
+
+.scrollmenu .box2 img{
+    object-fit: cover;
+    max-width: 35rem;  
+    border-radius: 2rem;
+
+}
+
+.scrollmenu .box2 .text .title{
+    font-size: 2.5rem;
+    padding-top: 0rem; 
+    padding-bottom: 1rem;
+    color: var(--white);
+    font-family: 'Monument Extended'; 
+    font-weight: 500;
+    padding-left: 1rem; 
+}
+
+.scrollmenu .box2 .text .description{
+    font-size: 2rem;
+    color: var(--light-grey);
+    font-weight: 500;
+    padding-right: 3rem;
+    height: 20rem; 
+
+}
+
+.scrollmenu .box2 .thumbnail{
+    align-items: center;
+    text-align: center;
+    width: 0.9fr; 
+}
+
+
+.scrollmenu .box2 .thumbnail img{
+    width: 0.9fr; 
+    object-fit: cover; 
+}
+
+.scrollmenu .box .thumbnail a{
+    justify-content: center;
+    width: 1fr;
+    text-align: center;
+}
+
+.scrollmenu .box .text{
+    width: 1fr; 
+}
+
+
+
+
+
+
+
+
+
+
+                
+
+
+.header .flex .profile{ 
+    position: absolute; 
+    top: 120%; right: 2rem; 
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center; 
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+    margin-bottom: .5rem;  
+    transition:.2s ease-in-out; 
+    z-index:1000; 
+
+}
+
+.header .flex .profile.active{
+    transform: scale(1);
+
+}
+ 
+.header .flex .profile img{
+    height: 10rem; 
+    width: 10rem; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom:.5rem;
+}
+
+.header .flex .profile h3{
+    font-size: 2rem; 
+    font-family: 'Monument Extended', sans-serif;;
+    color: var(--white); 
+    font-weight: 400;
+}
+
+.header .flex .profile span{
+    color: var(--card-color); 
+    font-size: 2rem;
+}
+
+.side-bar{
+    position: fixed; 
+    top: 0; left: 0; 
+    height: 100vh; 
+    width: 30rem; 
+    background-color: var(--main-color);
+    border-right: var(--border);
+    transition: .1s ease-in-out;
+    z-index: 1200; 
+}
+
+.side-bar .close-side-bar{
+    text-align: right;
+    padding-bottom: 0; 
+
+}
+
+.side-bar .close-side-bar i{
+    width: 4.5rem; 
+    line-height: 4.4rem;
+    font-size: 1.5rem;
+    cursor: pointer; 
+    color: var(--card-color);
+    text-align: center;
+}
+
+.side-bar .close-side-bar i:hover{
+    background-color: var(--blackk);
+}
+
+.side-bar .profile{
+    padding: 3rem 2rem;
+    text-align: center; 
+
+}
+
+.side-bar .profile img{
+    height: 10rem; 
+    width: 10rem; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom:.5rem;
+    margin-top: 2rem;
+}
+
+.side-bar .profile h3{
+    font-size: 2rem; 
+    color: var(--white)
+}
+
+.side-bar .profile span{
+    color: var(--white); 
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.side-bar .navbar{
+    margin-top: 0.5rem;
+}
+
+.side-bar .navbar a{
+    display: block;
+    padding: 1.5rem;
+    margin: .5rem 0; 
+    font-size: 1.8rem;
+    font-weight: 300;
+
+}
+
+.side-bar .navbar a i{
+    color: var(--white);
+    margin-right: 1rem;
+}
+
+.side-bar.active{
+    left: -31rem;
+}
+
+
+.subsub{
+    padding: 1rem 5rem;
+    font-size: 2rem;
+    color: var(--light-grey);
+    font-weight: 500;
+    margin-bottom: 1rem;   
+}
+
+
+.sub-heading{
+    padding: 1rem 5rem;
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 800;
+    background-color: var(--main-color-glass);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Monument Extended', sans-serif;
+}
+
+.sub-heading2{
+    padding: 1rem 5rem;
+    font-size: 3rem;
+    color: var(--main-color-glass);
+    font-weight: 800;
+    background-color: var(--white);
+    margin-bottom: 1rem;
+}
+
+
+
+.sub-heading2{
+    font-family: "Monument Extended", sans-serif; 
+    font-weight: 400; 
+    padding-left: 5%; 
+    font-size: 4rem;
+    color:rgba(24, 24, 24); 
+}
+
+.prev {
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; 
+    border-radius: 3rem;
+    background-color: var(--main-color);
+    backdrop-filter: blur(6px);
+    margin-bottom: 2rem;
+    margin-left: 5%;
+    margin-right: 5%; 
+    margin-top: 2rem; 
+    border-color: var(--card-color);
+    border-style: double; 
+    border-width: 5px; 
+ }
+ 
+ .prev .text{
+    align-items: center;
+    justify-content: center; 
+    padding:2rem; 
+    vertical-align: middle; 
+
+ }
+
+
+
+ 
+ .prev .text .sub-heading {
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 200;
+    margin-bottom: 1rem;
+    font-family: "Neue Montreal", sans-serif; 
+ }
+ 
+ .prev .text .description{
+     font-size: 2rem;
+     color: var(--light-grey);
+     font-weight: 500;
+ }
+
+
+ 
+.screen{
+    background-color: #2b2b2b;
+    position: relative; 
+    animation-name: scrn;
+    animation-duration: 4s;
+    animation-delay: -2s;
+}
+
+
+
+
+.box {
+    opacity: 0; 
+    transform: translate(0, 10vh); 
+    transition: all 1s; 
+}
+
+
+.box{
+    display:inline-block;
+    grid-template-columns: 40rem 25rem;
+    margin-left: 5%;
+    margin-right: 5%; 
+    gap: 2rem; 
+    border-radius: 2rem;
+    background-color: var(--main-color-glass);
+    padding-left: 5rem;
+    padding-bottom: 3.5rem;
+    backdrop-filter: blur(6px);
+    margin-bottom: 2rem;
+    border-width: 1rem; 
+    opacity: 1; 
+    transform: translate(0,0); 
+    border-width: 0.6rem;
+    border-style: double; 
+    border-color: #acacac;
+}
+
+.box .text .title{
+    font-size: 2.5rem;
+    padding-top: 2.5rem; 
+    padding-bottom: 1rem;
+    color: var(--white);
+    font-family: 'Monument Extended'; 
+    font-weight: 500;
+}
+
+.box .text .description{
+    font-size: 2rem;
+    color: var(--light-grey);
+    font-weight: 500;
+    padding-right: 3rem;
+}
+
+.box .thumbnail{
+    align-items: center;
+    text-align: center;
+    width: 0.2fr; 
+}
+
+
+.box .thumbnail img{
+    height: 10rem; 
+    width: 20rem; 
+    object-fit: cover; 
+}
+
+.box .thumbnail a{
+    justify-content: center;
+    width: 1fr;
+}
+
+.box .text{
+    width: 1fr; 
+}
+
+
+
+
+
+.profile .sub-heading{
+    font-size: 7rem;
+    word-spacing: 2px;
+    margin-bottom: 2rem; 
+    color: #000;
+    font-weight: 400px;   
+    font-family: 'Monument Extended', sans-serif;  
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+
+}
+
+
+
+
+ 
+.side-bar .navbar a{
+    color: var(--white);
+}
+
+.side-bar .navbar a:hover{
+    background-color: var(--white);
+    color: #0b0b0c;
+}
+
+.side-bar .navbar a:hover i{
+    margin-right:2.5rem;
+    color:black; 
+    transition: 0.2s ease-in-out;
+}
+
+.footer{
+    position: fixed; 
+    bottom: 0; 
+    right:0; 
+    left:0; 
+    background-color: var(--main-color);
+    border-top: var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--white); 
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 1rem; 
+    z-index: 500rem; 
+}
+
+
+.buffer {
+    padding-top: 0.5rem;
+}
+
+
+.chapters .box-container{
+    display: grid; 
+    gap: 1.5rem; 
+    align-items: center; 
+    justify-content: center;
+
+}
+
+
+.row{
+    display: flex; 
+    align-items: center;
+    gap: 1.5rem; 
+    flex-wrap: wrap; 
+}
+
+.row .image{
+    flex: 1 1 40rem;
+}
+
+.row .image img{
+    object-fit: cover; 
+    padding-top: 1rem; 
+}
+
+.row .content{
+    flex: 1 1 40rem;
+}
+
+.row .content h3{
+    font-size: 5rem; ;
+    padding-left: 2rem; 
+    color: var(--white); 
+}
+
+.row .content p{
+    padding-left: 2rem; 
+    font-size: 1.5rem;
+    color: var(--white);
+    line-height: 2;
+
+}
+
+.container{
+    display: flex; 
+    overflow: hidden; 
+    margin: 0 auto; 
+    height: 100rem; 
+    margin-left: 5rem; 
+    margin-right: 5rem; 
+    max-width: 80rem; 
+}
+
+
+
+.container img{
+    max-width: 40rem; 
+    display: cover; 
+}
+
+
+.container .content{
+        margin-left: 0.5rem;
+        overflow: hidden; 
+        display: flex; 
+        justify-content: space-between; 
+        width: 250%; 
+        white-space: nowrap;
+        animation: scroll 10s infinite linear; 
+        margin-right: 0.5rem; 
+        margin-bottom: 5rem;
+        animation-name: cards; 
+        animation-duration: 10s; 
+}
+
+.container .content h3{
+    font-size: 3rem; 
+    text-align: center;
+    color: var(--white);
+    background-color: var(--card-color); 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    font-family: 'Monument Extended', sans-serif;
+    font-weight: 400;
+}
+
+.container .content p{
+    padding: 1rem; 
+    font-size: 2rem;
+    color: #acacac;
+    line-height: 2;
+    background-color: var(--main-color-glass);
+    line-height: 140%;
+}
+
+
+
+
+
+
+
+
+
+
+.row .content a{
+    margin-left: 2rem; 
+    margin-right: 2rem; 
+    text-align: center;
+}
+
+.watch-video .video-details {
+    background-color: var(--main-color);
+    padding: 2rem;
+    border-radius: 0.5rem;  
+}
+
+.watch-video .video-details .video{
+    width: 100%; 
+    border-radius: .5rem; 
+    margin-bottom: 2rem;
+}
+
+.watch-video .video-details .title{
+    font-size: 3rem;
+    color: var(--white); 
+    padding-bottom: 1rem;
+}
+
+.watch-video .video-details .descriptions{
+    font-size: 1.5rem;
+    color: var(--light-grey)
+}
+
+.notes{
+    background-color: var(--main-color);
+    padding: 2rem;
+    border-radius: 0.5rem; 
+    margin-top: 2rem; 
+}
+
+.notes .title{
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.notes .text{
+    font-size: 1.5rem;
+    color: var(--light-grey);
+}
+
+
+.contact .row{
+    display: flex;
+    align-items:center;
+    gap: 1.5rem; 
+}
+
+.contact .row .image{
+    flex: 1 1 50rem; 
+}
+
+ .contact .row .image .img{
+    height: 50rem; 
+    width: 100%; 
+ }
+
+ .contact .row form{
+    flex: 1 1 30rem;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+    border-width: 3px; 
+    border-style: solid; 
+    border-color: #6f6f6f;
+    padding: 2rem;
+    text-align: center;
+ }
+
+ .contact .row form h3{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-family: 'Monument Extended', sans-serif;
+    font-weight: 400;
+
+ }
+
+ .contact .row form .box{
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 3rem;
+    background-color: black; 
+    padding: 1.5rem; 
+    color: var(--white);
+    font-size: 1.8rem;
+ }
+
+ .contact .row form textarea{
+    height: 20rem;
+    resize:none;
+ }
+
+.regform h3{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+
+.regform .row{
+    text-align: center;
+    justify-content: center; 
+
+}
+
+ .regform .row .form{
+    flex: 30rem;
+    background-color: var(--main-color-glass);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+ }
+
+ .regform .row form h3{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+ }
+
+ .regform .row form .box{
+    width: 50rem; 
+    margin: 1rem 0;
+    border-radius: .5rem;
+    background-color: var(--card-color);
+    padding: 1.5rem; 
+    color: var(--white);
+
+ }
+
+ .regform .row form textarea{
+    height: 20rem;
+    resize:none;
+    font-size:1rem; 
+ }
+
+
+.ftr{
+    padding-top: 5rem; 
+}
+
+
+.login {
+    padding-top: 10rem; 
+    box-sizing: 20rem; 
+    margin-left: 20%; 
+    margin-right: 20%; 
+    padding-bottom: 10rem; 
+}
+ 
+.login h3{
+    font-size: 4rem;
+    margin-top: 2rem;
+    color: var(--white);
+}
+
+.login .row{
+    text-align: center;
+    display: block; 
+}
+
+ .login .row .form{
+    flex: 30rem;
+    background-color: var(--blackk);
+    border-radius: .5rem;
+    padding: 0.75rem;
+    text-align: center;
+    display: block; 
+ }
+
+ .login .row form h3{
+    font-size: 7rem;
+    word-spacing: 2px;
+    margin-bottom: 2rem; 
+    color: #000;  
+    font-family: 'Monument Extended', sans-serif;  
+    text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 1px 1px 0 #ffffff;
+
+ }
+
+ .login .row form .box{ 
+    margin: 1rem;
+    width: 100%;
+    border-radius: 2rem;
+    background-color: var(--main-color);
+    padding: 1rem; 
+    color: var(--white);
+    font-size: 3rem;
+    padding-left: 2rem;
+ }
+
+ .login .row form textarea{
+    height: 20rem;
+    resize:none;
+    font-size:1rem; 
+    border-style: solid; 
+ }
+
+
+
+
+
+
+ .forgot {
+    padding-top: 10rem; 
+    box-sizing: 20rem; 
+    margin-left: 10%; 
+    margin-right: 10%; 
+    padding-bottom: 10rem; 
+}
+ 
+.forgot .row h3{
+    font-size: 4rem;
+    margin-top: 2rem;
+    color: var(--white);
+    font-size: 7rem;
+    word-spacing: 2px;
+    margin-bottom: 2rem; 
+    color: #000;  
+    font-family: 'Monument Extended', sans-serif;  
+    text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 1px 1px 0 #ffffff;
+
+}
+
+.forgot .row p{
+    font-size: 2rem; 
+    color: var(--white); 
+    padding-bottom: 2rem;
+    font-weight: 200; 
+}
+
+.forgot .row{
+    text-align: center;
+    display: block; 
+}
+
+ .forgot .row form{
+    flex: 30rem;
+    background-color: var(--blackk);
+    border-radius: 2rem;
+    padding: 0.75rem;
+    text-align: center;
+    display: block; 
+ }
+
+
+
+ .forgot .row .box .enter{
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    margin-bottom:-1rem; 
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    background-color: #f8f8f8;
+    font-size: 2rem;
+    resize: none;
+ }
+
+ 
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+/*media queries*/
+
+
+@keyframes pop {
+    0% {top: 0px;}
+    50% {top: 150px;}
+    100% {top: 0px}
+}
+
+@keyframes scrn {
+    0% {top: 0px;}
+    50% {top: 1500px;}
+    100% {top: 0px}
+}
+
+@keyframes floats {
+    0% {top: 0px;}
+    50% {top: 150px;}
+    100% {top: 0px}
+}
+
+@keyframes logo {
+    0% {opacity: 0; top: 0px;}
+    50% {opacity: 0; top: 80px;}
+    100% {opacity: 1; top: 0px;}
+}
+
+@keyframes cards {
+    from{left: 200%;}
+    to {left: 0%}
+}
+
+
+@keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+
+
+
+
+@media (max-width:1200px){
+
+    body{
+        padding-left: 0;
+    }
+
+    .hook {
+        padding-top: 10rem;
+        padding-bottom: 0; 
+    }
+
+    .side-bar{
+        transition: .2s ease-in-out; 
+        left: -30rem; 
+    }
+
+    .side-bar.active{
+        left: 0;
+        box-shadow: 0 0 0 100vw rgb(0,0,0,0.5);
+    }
+
+    .side-bar .close-side-bar{
+        display: block;
+
+    }
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%
+    }
+}
+
+@media (max-width:768px){
+
+    #search-btn{
+        display:inline-block; 
+    }
+
+    .header .flex .search-form{
+        position: absolute;
+        top:99%; left:0; right: 0;
+
+        border-top: var(--border); 
+        border-bottom: var(--border);
+        background-color: var(--main-color);
+        clip-path:polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .flex .search-form.active{
+        clip-path:polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%); 
+        transition: .5s ease-in-out; 
+    }
+    
+    .header .flex{
+    padding: 1.5rem 2rem;
+    position: relative;  
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+
+    }
+    
+
+}
+@media (max-width:450px){
+
+    html{
+        font-size: 50%
+    }
+
+
+    .heading{
+        font-size:2rem; 
+    }
+
+    .flex-btn{
+        flex-flow: column;  
+        gap: 0; 
+    }
+}
